@@ -1,0 +1,33 @@
+
+<section class="nt-counter-area" #counterArea>
+  <div class="container">
+
+    <!-- Section heading -->
+    <header class="nt-counter__header text-center">
+      <span class="eyebrow">Our Impact in Numbers</span>
+      <h3>Trusted by Businesses Across Africa and Liberia</h3>
+    </header>
+
+    <!-- Counter cards -->
+    <div class="nt-counter__grid">
+      <article
+        class="nt-counter-card"
+        *ngFor="let item of counters; let i = index; trackBy: trackById"
+        [style.--delay]="i * 0.1 + 's'"
+      >
+        <div class="icon-box" aria-hidden="true">
+          <i [class]="item.icon"></i>
+        </div>
+
+        <h5>
+          <span class="count">{{ displayValues[i] }}</span>
+          <span class="suffix">{{ item.suffix }}</span>
+        </h5>
+
+        <h6>{{ item.label }}</h6>
+        <p>{{ item.sub }}</p>
+      </article>
+    </div>
+
+  </div>
+</section>

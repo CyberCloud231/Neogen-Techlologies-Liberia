@@ -1,0 +1,266 @@
+<!-- ================= TOP MINI NAV ================= -->
+<div
+  class="top-mini-nav"
+  [class.hide-mini]="hideMiniNav"
+  [attr.aria-hidden]="hideMiniNav"
+>
+  <div class="container-fluid mini-nav-inner">
+    <div class="contactinfo">
+      <a href="mailto:info@neogentechnologies.com" class="contact-item">
+        <i class="bi bi-envelope-fill"></i>
+        <span>info@neogentechnologies.com</span>
+      </a>
+      <a href="tel:+231887425229" class="contact-item">
+        <i class="bi bi-telephone-fill"></i>
+        <span>+91 7009867706 | +231887425229</span>
+      </a>
+      <div class="contact-item">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>Monrovia, Liberia 1000</span>
+      </div>
+      <div class="contact-item">
+        <i class="bi bi-patch-check-fill"></i>
+        <span>LBR NO: LR204069</span>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="#" class="icon-circle" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="icon-circle" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="#" class="icon-circle" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN NAVIGATION ================= -->
+<nav class="navbar app-main-header" [class.sticky-header]="isSticky" aria-label="Main navigation">
+  <div class="container-fluid header-inner">
+    <a class="navbar-brand logo-box" routerLink="/home" aria-label="Neogen Technologies home">
+      <i class="bi bi-clouds logo-icon"></i>
+      <span class="logo-text">Neogen Technologies</span>
+    </a>
+
+    <button class="mobile-menu-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- ================= DESKTOP NAVIGATION ================= -->
+    <div class="desktop-navigation d-none d-lg-flex">
+      <ul class="navbar-nav nav-spacing">
+        <li class="nav-item">
+          <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
+        </li>
+
+        <!-- COMPANY -->
+        <li class="nav-item dropdown mega-menu">
+          <button class="nav-link dropdown-toggle" type="button">Company</button>
+          <div class="dropdown-menu mega-dropdown">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <h6 class="mega-title">About Neogen</h6>
+                <a class="dropdown-item" routerLink="/about"><i class="bi bi-building"></i> About Us</a>
+                <a href="/home#teamSection" class="dropdown-item" (click)="navigateToTeam($event)"><i class="bi bi-people"></i> Our Team</a>
+                <a class="dropdown-item" routerLink="/contact"><i class="bi bi-globe2"></i> Contact & Partnerships</a>
+              </div>
+              <div class="col-md-6">
+                <h6 class="mega-title">Careers & Insights</h6>
+                <a class="dropdown-item" routerLink="/careers"><i class="bi bi-briefcase"></i> Careers & Vacancies</a>
+                <a class="dropdown-item" routerLink="/blogs"><i class="bi bi-newspaper"></i> News & Insights</a>
+                <a class="dropdown-item" routerLink="/projects"><i class="bi bi-kanban"></i> Our Projects</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= SAAS PLATFORMS + YOUR 5 NEW PRODUCTS ================= -->
+        <li class="nav-item dropdown mega-menu">
+          <button class="nav-link dropdown-toggle" type="button">Platforms</button>
+          <div class="dropdown-menu mega-dropdown mega-wide">
+            <div class="row g-4">
+              <div class="col-md-3">
+                <h6 class="mega-title">Payments & Communications</h6>
+                <a class="dropdown-item" routerLink="/platforms/neogenpay"><i class="bi bi-credit-card"></i> NeogenPay</a>
+                <a class="dropdown-item" routerLink="/platforms/neonotify"><i class="bi bi-bell"></i> NeogenNotify</a>
+                <a class="dropdown-item" routerLink="/platforms/neodrive"><i class="bi bi-cloud-arrow-up"></i> NeoDrive</a>
+                <a class="dropdown-item" routerLink="/platforms"><i class="bi bi-lock"></i> Neogen Auth</a>
+              </div>
+              <div class="col-md-3">
+                <h6 class="mega-title">SaaS Products</h6>
+                <a class="dropdown-item" routerLink="/platforms/neosmartcampus"><i class="bi bi-mortarboard-fill"></i> NeoSmartCampus</a>
+                <a class="dropdown-item" routerLink="/platforms/palmhub-pos"><i class="bi bi-receipt-cutoff"></i> PalmHub POS</a>
+                <a class="dropdown-item" routerLink="/platforms/palmmart"><i class="bi bi-cart4"></i> PalmMart Ecommerce</a>
+                <a class="dropdown-item" routerLink="/platforms/neosmartid"><i class="bi bi-person-badge-fill"></i> NeoSmartID - GovDigitalID</a>
+                <a class="dropdown-item" routerLink="/platforms/neocare"><i class="bi bi-hospital-fill"></i> NeoCare HMS</a>
+              </div>
+              <div class="col-md-3">
+                <h6 class="mega-title">Business Technology</h6>
+                <a class="dropdown-item" routerLink="/erp"><i class="bi bi-grid-1x2"></i> Enterprise Systems</a>
+                <a class="dropdown-item" routerLink="/crm"><i class="bi bi-people"></i> CRM Solutions</a>
+                <a class="dropdown-item" routerLink="/services"><i class="bi bi-diagram-3"></i> Platform Integration</a>
+                <a class="dropdown-item" routerLink="/cloud"><i class="bi bi-cloud"></i> Cloud Solutions</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= SOLUTIONS ================= -->
+        <li class="nav-item dropdown mega-menu">
+          <button class="nav-link dropdown-toggle" type="button">Solutions</button>
+          <div class="dropdown-menu mega-dropdown">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <h6 class="mega-title">Software Engineering</h6>
+                <a class="dropdown-item" routerLink="/web-dev"><i class="bi bi-code-slash"></i> Web Development</a>
+                <a class="dropdown-item" routerLink="/app-dev"><i class="bi bi-phone"></i> Application Development</a>
+                <a class="dropdown-item" routerLink="/services"><i class="bi bi-window-stack"></i> Custom Software</a>
+              </div>
+              <div class="col-md-4">
+                <h6 class="mega-title">Enterprise Systems</h6>
+                <a class="dropdown-item" routerLink="/erp"><i class="bi bi-grid-1x2"></i> ERP Systems</a>
+                <a class="dropdown-item" routerLink="/crm"><i class="bi bi-people"></i> CRM Solutions</a>
+                <a class="dropdown-item" routerLink="/cloud"><i class="bi bi-cloud"></i> Cloud Solutions</a>
+              </div>
+              <div class="col-md-4">
+                <h6 class="mega-title">Advisory & Security</h6>
+                <a class="dropdown-item" routerLink="/consulting"><i class="bi bi-lightbulb"></i> IT Consulting</a>
+                <a class="dropdown-item" routerLink="/services"><i class="bi bi-plug"></i> API Integration</a>
+                <a class="dropdown-item" routerLink="/services"><i class="bi bi-shield-lock"></i> Security & AI Solutions</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ================= DEVELOPER ECOSYSTEM ================= -->
+        <li class="nav-item dropdown mega-menu">
+          <button class="nav-link dropdown-toggle" type="button">Developers</button>
+          <div class="dropdown-menu mega-dropdown">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <h6 class="mega-title">Developer Resources</h6>
+                <a class="dropdown-item" routerLink="/developers"><i class="bi bi-code-square"></i> Developer Portal</a>
+                <a class="dropdown-item" routerLink="/developers/docs"><i class="bi bi-journal-code"></i> Documentation</a>
+              </div>
+              <div class="col-md-6">
+                <h6 class="mega-title">Build with Neogen</h6>
+                <a class="dropdown-item" routerLink="/developers/api"><i class="bi bi-braces"></i> API Reference</a>
+                <a class="dropdown-item" routerLink="/contact"><i class="bi bi-headset"></i> Technical Partnerships</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a routerLink="/blogs" routerLinkActive="active" class="nav-link">Insights</a></li>
+        <li class="nav-item"><a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- ================= DESKTOP ACTIONS ================= -->
+    <div class="desktop-actions d-none d-lg-flex">
+      <button class="btn-royal" type="button" data-bs-toggle="offcanvas" data-bs-target="#contactCanvas" aria-controls="contactCanvas">
+        <i class="bi bi-chat-dots-fill"></i><span>Get Quote</span>
+      </button>
+      <button class="toggle-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#contactCanvas" aria-controls="contactCanvas" aria-label="Open contact panel">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTACT CANVAS -->
+<div class="offcanvas offcanvas-end contact-canvas" tabindex="-1" id="contactCanvas" aria-labelledby="contactCanvasTitle">
+  <div class="offcanvas-header">
+    <div><span class="canvas-eyebrow">NEOGEN TECHNOLOGIES</span><h5 class="offcanvas-title" id="contactCanvasTitle">Let's Build Something Great</h5></div>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close contact panel"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p class="canvas-description">Have a project in mind? Contact our team to discuss your technology needs.</p>
+    <a href="mailto:info@neogentechnologies.com" class="canvas-contact-item"><span class="canvas-icon"><i class="bi bi-envelope-fill"></i></span><span><small>Email us</small><strong>info@neogentechnologies.com</strong></span></a>
+    <a href="tel:+231887425229" class="canvas-contact-item"><span class="canvas-icon"><i class="bi bi-telephone-fill"></i></span><span><small>Call our team</small><strong>+231 887 425 229</strong></span></a>
+    <div class="canvas-contact-item"><span class="canvas-icon"><i class="bi bi-geo-alt-fill"></i></span><span><small>Our location</small><strong>Monrovia, Liberia</strong></span></div>
+    <a routerLink="/contact" class="canvas-cta" data-bs-dismiss="offcanvas">Discuss Your Project <i class="bi bi-arrow-up-right"></i></a>
+  </div>
+</div>
+
+<!-- ================= MOBILE NAVIGATION ================= -->
+<div class="offcanvas offcanvas-end mobile-menu-canvas" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuTitle">
+  <div class="offcanvas-header">
+    <a routerLink="/home" class="mobile-brand" data-bs-dismiss="offcanvas"><i class="bi bi-clouds"></i><span>Neogen Technologies</span></a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close navigation menu"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p class="mobile-menu-label" id="mobileMenuTitle">Explore Neogen</p>
+    <ul class="navbar-nav mobile-nav">
+      <li class="nav-item"><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link" data-bs-dismiss="offcanvas"><i class="bi bi-house"></i> Home</a></li>
+
+      <li class="nav-item">
+        <button class="nav-link mobile-submenu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mobileCompany"><span><i class="bi bi-building"></i> Company</span><i class="bi bi-chevron-down submenu-chevron"></i></button>
+        <div class="collapse" id="mobileCompany">
+          <ul class="mobile-submenu">
+            <li><a routerLink="/about" data-bs-dismiss="offcanvas">About Us</a></li>
+            <li><a href="/home#teamSection" (click)="navigateToTeam($event)" data-bs-dismiss="offcanvas">Our Team</a></li>
+            <li><a routerLink="/careers" data-bs-dismiss="offcanvas">Careers & Vacancies</a></li>
+            <li><a routerLink="/projects" data-bs-dismiss="offcanvas">Our Projects</a></li>
+            <li><a routerLink="/contact" data-bs-dismiss="offcanvas">Partnerships</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <button class="nav-link mobile-submenu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mobilePlatforms"><span><i class="bi bi-layers"></i> Platforms</span><i class="bi bi-chevron-down submenu-chevron"></i></button>
+        <div class="collapse" id="mobilePlatforms">
+          <ul class="mobile-submenu">
+            <li><a routerLink="/platforms" data-bs-dismiss="offcanvas">All Platforms</a></li>
+            <li><a routerLink="/platforms/neogenpay" data-bs-dismiss="offcanvas">NeogenPay</a></li>
+            <li><a routerLink="/platforms/neonotify" data-bs-dismiss="offcanvas">neoNotify</a></li>
+            <li><a routerLink="/platforms/neodrive" data-bs-dismiss="offcanvas">NeoDrive</a></li>
+            <li><a routerLink="/platforms/neosmartcampus" data-bs-dismiss="offcanvas">NeoSmartCampus</a></li>
+            <li><a routerLink="/platforms/palmhub-pos" data-bs-dismiss="offcanvas">PalmHub POS</a></li>
+            <li><a routerLink="/platforms/palmmart" data-bs-dismiss="offcanvas">PalmMart Ecommerce</a></li>
+            <li><a routerLink="/platforms/neosmartid" data-bs-dismiss="offcanvas">NeoSmartID - GovDigitalID</a></li>
+            <li><a routerLink="/platforms/neocare" data-bs-dismiss="offcanvas">NeoCare HMS</a></li>
+            <li><a routerLink="/erp" data-bs-dismiss="offcanvas">Enterprise Systems</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <button class="nav-link mobile-submenu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSolutions"><span><i class="bi bi-grid"></i> Solutions</span><i class="bi bi-chevron-down submenu-chevron"></i></button>
+        <div class="collapse" id="mobileSolutions">
+          <ul class="mobile-submenu">
+            <li><a routerLink="/web-dev" data-bs-dismiss="offcanvas">Web Development</a></li>
+            <li><a routerLink="/app-dev" data-bs-dismiss="offcanvas">Application Development</a></li>
+            <li><a routerLink="/cloud" data-bs-dismiss="offcanvas">Cloud Solutions</a></li>
+            <li><a routerLink="/erp" data-bs-dismiss="offcanvas">ERP Systems</a></li>
+            <li><a routerLink="/crm" data-bs-dismiss="offcanvas">CRM Solutions</a></li>
+            <li><a routerLink="/consulting" data-bs-dismiss="offcanvas">IT Consulting</a></li>
+            <li><a routerLink="/services" data-bs-dismiss="offcanvas">All Services</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <button class="nav-link mobile-submenu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mobileDevelopers"><span><i class="bi bi-code-square"></i> Developers</span><i class="bi bi-chevron-down submenu-chevron"></i></button>
+        <div class="collapse" id="mobileDevelopers">
+          <ul class="mobile-submenu">
+            <li><a routerLink="/developers" data-bs-dismiss="offcanvas">Developer Portal</a></li>
+            <li><a routerLink="/developers/docs" data-bs-dismiss="offcanvas">Documentation</a></li>
+            <li><a routerLink="/developers/api" data-bs-dismiss="offcanvas">API Reference</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item"><a routerLink="/blogs" routerLinkActive="active" class="nav-link" data-bs-dismiss="offcanvas"><i class="bi bi-journal-text"></i> Insights</a></li>
+      <li class="nav-item"><a routerLink="/contact" routerLinkActive="active" class="nav-link" data-bs-dismiss="offcanvas"><i class="bi bi-chat-square-text"></i> Contact</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <p>Building something innovative?</p>
+      <a routerLink="/contact" class="canvas-cta" data-bs-dismiss="offcanvas">Get a Quote <i class="bi bi-arrow-up-right"></i></a>
+      <div class="mobile-socials">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

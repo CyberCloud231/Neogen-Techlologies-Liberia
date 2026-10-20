@@ -1,0 +1,60 @@
+<div class="neo-product" *ngIf="product; else notFound">
+  <!-- HERO -->
+  <div class="neo-product__hero">
+    <div class="container">
+      <span class="neo-product__eyebrow">{{ product.category | titlecase }}</span>
+      <h1>{{ product.name }}</h1>
+      <p class="lead">{{ product.tagline }}</p>
+      <p>{{ product.description }}</p>
+      <a routerLink="/contact" class="btn btn-primary">Get Started with {{ product.name }}</a>
+    </div>
+  </div>
+
+  <!-- TABS - This is what makes it dynamic when tab is clicked -->
+  <div class="neo-product__tabs">
+    <div class="container">
+      <ul>
+        <li *ngFor="let tab of tabs"
+            [class.active]="activeTab === tab"
+            (click)="setTab(tab)">
+          {{ tab | titlecase }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TAB CONTENT RENDERING -->
+  <div class="container py-5">
+    <!-- OVERVIEW -->
+    <div *ngIf="activeTab === 'overview'">
+      <h2>Overview of {{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="row g-4" *ngIf="activeTab === 'features'">
+      <div class="col-md-4" *ngFor="let f of product.features">
+        <div class="neo-feature-card">
+          <i class="bi {{ f.icon }}"></i>
+          <h4>{{ f.title }}</h4>
+          <p>{{ f.desc }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFITS -->
+    <div *ngIf="activeTab === 'benefits'">
+      <h3>Why {{ product.name }}?</h3>
+      <ul>
+        <li *ngFor="let b of product.benefits">{{ b }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="container py-5 text-center">
+    <h2>Product not found</h2>
+    <a routerLink="/">Go Home</a>
+  </div>
+</ng-template>

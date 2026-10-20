@@ -1,0 +1,237 @@
+<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel"
+  data-bs-interval="5000" data-bs-pause="false">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button *ngFor="let img of images; let i = index" type="button" data-bs-target="#heroCarousel"
+      [attr.data-bs-slide-to]="i" [class.active]="i === 0"></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div *ngFor="let img of images; let i = index" class="carousel-item" [class.active]="i === 0">
+      <div class="image-wrapper">
+        <img [src]="img.src" class="d-block w-100" [alt]="img.title" />
+
+        <!-- Gradient Overlay -->
+        <div class="overlayslider"></div>
+
+        <!-- Caption -->
+        <div class="carousel-caption">
+          <h4 style="color: #0066ff; font-weight: 700; font-size: 2.2rem;">{{ img.subTitle }}</h4>
+          <h1>{{ img.title }}</h1>
+          <p>{{ img.description }}</p>
+          <a class="btn btn-primary btn-lg hero-btn">
+            {{ img.buttonText }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- preAbout section on home page  -->
+
+<section class="preAbout enterprise-section reveal">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-7 col-md-12">
+        <div class="content-wrapper">
+          <div class="subtitle-row">
+            <div class="line"></div>
+            <h6 class="SubTitle">Who We Are</h6>
+          </div>
+
+          <h1 class="mainTitle">
+            Engineering powerful digital systems that transform businesses, accelerate innovation,
+            and scale enterprise technology solutions.
+          </h1>
+
+          <p class="description">
+            We build secure, scalable software, modern web applications, and full IT infrastructure
+            systems designed for growth.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT CTA -->
+      <div class="col-lg-5 col-md-12 d-flex justify-content-lg-center justify-content-center">
+        <div class="cta-wrapper">
+          <button class="know-btn">Discover More →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mission-vision-section">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <!-- LEFT CONTENT -->
+      <div class="col-xl-4 col-lg-6 col-md-12 reveal">
+        <div class="tv-about-left">
+          <div class="single-icon-box">
+            <div class="icon-box">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <div class="icon-box-content">
+              <h3>Our Mission</h3>
+              <p>
+                To accelerate Liberia’s digital transformation through secure, scalable and
+                intelligent IT systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="single-icon-box">
+            <div class="icon-box">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+            <div class="icon-box-content">
+              <h3>Our Vision</h3>
+              <p>
+                To become Liberia’s leading technology partner in building a fully digitized and
+                innovation-driven nation.
+              </p>
+            </div>
+          </div>
+
+          <div class="single-icon-box">
+            <div class="icon-box">
+              <i class="bi bi-shield-lock"></i>
+            </div>
+            <div class="icon-box-content">
+              <h3>Information Security</h3>
+              <p>
+                Implementing enterprise-grade cybersecurity frameworks to protect digital
+                infrastructure across Liberia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MIDDLE IMAGE -->
+      <div class="col-xl-4 col-lg-6 col-md-12 text-center reveal">
+        <img src="/IMAGES/dataScience3.jpg" class="custom-img floating-img" alt="" />
+        <p class="mt-4 image-text" style="text-align: justify; font-size: 1.2rem; color: gray;">
+          We empower businesses and institutions to thrive in the digital era by delivering
+          custom-built solutions that streamline operations, enhance efficiency, and ensure
+          compliance. From software engineering and ERP development to web applications, IT support,
+          and professional training, our services are designed to meet diverse needs across
+          industries.
+        </p>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-xl-4 d-none d-xl-block text-center reveal">
+        <img src="/IMAGES/NeoMeeting1.jpg" class="custom-img floating-img delay" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-services">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="home-services-header text-center">
+      <span class="subtitle"> Our Enterprise IT Services</span>
+
+      <h2 class="title">Strategic Technology Solutions That Drive Business Growth</h2>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="home-services-grid">
+      <div class="home-service-card" *ngFor="let service of homeServices">
+        <div class="icon">
+          <i [class]="service.icon"></i>
+        </div>
+
+        <h3>{{ service.title }}</h3>
+
+        <p>{{ service.description }}</p>
+
+        <a routerLink="/services" class="card-btn"> Read More → </a>
+      </div>
+    </div>
+
+    <div class="home-services-footer text-center">
+      <a routerLink="/services" class="primary-btn"> Explore All Services → </a>
+    </div>
+
+    <div class="consulting-note text-center">
+      <p>
+        You can also explore our dedicated Consultant Services.
+        <a routerLink="/consulting"> Contact </a> us for professional consulting →
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="tv-project-area">
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="section-header text-center">
+      <span class="subtitle">Our Projects</span>
+      <h2 class="title">Tech Solutions Driving Global Connectivity</h2>
+      <p class="desc">
+        We design scalable, secure, and high-performance systems that power businesses and governments.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="row g-4 mt-4">
+
+      <div class="col-lg-4 col-md-6" *ngFor="let project of projects">
+        <div class="project-card">
+
+          <!-- IMAGE -->
+          <div class="project-img">
+            <img [src]="project.image" alt="" />
+            <div class="overlay"></div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="project-content">
+            <h3>{{project.title}}</h3>
+
+            <p class="project-desc">
+              {{project.description}}
+            </p>
+
+            <div class="project-tags">
+              <span *ngFor="let tag of project.tags">{{tag}}</span>
+            </div>
+
+            <a routerLink="/project-details" class="project-btn">
+              View Details →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <a routerLink="/projects" class="primary-btn">
+        View All Projects →
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- OUR TEAM SECTION -->
+<section
+  id="teamSection"
+  #revealSection
+  class="team-section-anchor"
+>
+  <app-team-section></app-team-section>
+  <app-counter-section></app-counter-section>
+  <app-testimonial-section></app-testimonial-section>
+  <app-contact-section></app-contact-section>
+</section>
+

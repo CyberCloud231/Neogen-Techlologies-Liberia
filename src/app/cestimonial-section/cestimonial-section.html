@@ -1,0 +1,122 @@
+
+<section
+  class="nt-testimonial"
+  id="testimonials"
+  (mouseenter)="stopAutoSlide()"
+  (mouseleave)="startAutoSlide()"
+>
+  <div class="container">
+    <div class="nt-testimonial__shell">
+
+      <!-- Left: Section introduction and rating summary -->
+      <div class="nt-testimonial__left">
+        <span class="eyebrow">Client Testimonials</span>
+
+        <h2>
+          What Our Clients Say<br />
+          About Neogen.
+        </h2>
+
+        <p>
+          Trusted by startups, SMEs and enterprises across Liberia to deliver
+          secure, scalable technology solutions.
+        </p>
+
+        <div class="rating-summary">
+          <div class="stars" aria-label="5 out of 5 stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+
+          <div class="summary-text">
+            <strong>4.9/5.0</strong>
+            <span>from 50+ reviews</span>
+          </div>
+        </div>
+
+        <div class="nt-testimonial__nav">
+          <button
+            type="button"
+            class="nav-btn prev"
+            (click)="prev()"
+            aria-label="Previous testimonial"
+          >
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+          </button>
+
+          <button
+            type="button"
+            class="nav-btn next"
+            (click)="next()"
+            aria-label="Next testimonial"
+          >
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Active testimonial -->
+      <div class="nt-testimonial__right">
+        <div
+          class="nt-testimonial-card"
+          [class.is-animating]="isAnimating"
+        >
+          <div class="top-row">
+            <div class="quote-icon" aria-hidden="true">
+              <i class="bi bi-quote"></i>
+            </div>
+
+            <div class="rating">
+              <span class="rating-stars" aria-label="Client rating">
+                <i
+                  class="bi bi-star-fill"
+                  *ngFor="let s of [].constructor(activeItem.rating)"
+                ></i>
+              </span>
+
+              <span>{{ activeItem.rating }}.0 Rating</span>
+            </div>
+          </div>
+
+          <p class="feedback">
+            "{{ activeItem.feedback }}"
+          </p>
+
+          <div class="client-info">
+            <img
+              class="client-photo"
+              [src]="activeItem.image"
+              [alt]="activeItem.name"
+              (error)="onImageError($event)"
+            />
+
+            <div class="client-meta">
+              <strong>{{ activeItem.name }}</strong>
+              <span>{{ activeItem.role }} • {{ activeItem.company }}</span>
+            </div>
+
+            <div class="client-badge">
+              {{ activeItem.companyInitials }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation indicators -->
+        <div class="nt-testimonial-simple-dots">
+          <button
+            type="button"
+            *ngFor="let item of testimonials; let i = index"
+            [class.is-active]="i === activeIndex"
+            (click)="goTo(i)"
+            [attr.aria-label]="'Go to testimonial ' + (i + 1)"
+            [attr.aria-current]="i === activeIndex ? 'true' : null"
+          ></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

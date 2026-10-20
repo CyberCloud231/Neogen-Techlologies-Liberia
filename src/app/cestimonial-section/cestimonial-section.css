@@ -1,0 +1,498 @@
+
+/* =========================================
+   NEOGEN TECHNOLOGIES — TESTIMONIAL SECTION
+   Scoped styles; no global changes
+========================================= */
+
+.nt-testimonial {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 110px 0;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(248, 251, 255, 0.94) 55%,
+      rgba(238, 244, 255, 0.96) 100%
+    ),
+    url('/IMAGES/testomal bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Subtle technology grid */
+.nt-testimonial::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(rgba(11, 35, 71, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 35, 71, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* Bootstrap container inside the section */
+.nt-testimonial .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-right: 28px;
+  padding-left: 28px;
+}
+
+.nt-testimonial__shell {
+  display: grid;
+  grid-template-columns: 36% minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.nt-testimonial__left .eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--neo-primary, #0066ff);
+  font-size: 0.82rem;
+  font-weight: 660;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.nt-testimonial__left h2 {
+  margin: 0 0 16px;
+  color: var(--neo-navy, #0b2347);
+  font-size: clamp(2rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.7px;
+}
+
+.nt-testimonial__left > p {
+  max-width: 420px;
+  margin: 0 0 28px;
+  color: var(--neo-muted, #6b7280);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* =========================================
+   RATING SUMMARY — YELLOW STARS
+========================================= */
+
+.nt-testimonial .rating-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  background: var(--neo-white, #ffffff);
+  border: 1px solid var(--neo-border, #e5ebf5);
+  box-shadow: 0 10px 30px rgba(11, 35, 71, 0.06);
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.nt-testimonial .rating-summary .stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.nt-testimonial .rating-summary .stars i {
+  display: inline-block;
+  color: #ffb400 !important;
+  font-size: 1.15rem;
+  line-height: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nt-testimonial .rating-summary .summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nt-testimonial .rating-summary .summary-text strong {
+  color: var(--neo-navy, #0b2347);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.nt-testimonial .rating-summary .summary-text span {
+  color: var(--neo-muted, #6b7280);
+  font-size: 0.88rem;
+}
+
+/* =========================================
+   NAVIGATION BUTTONS
+========================================= */
+
+.nt-testimonial .nt-testimonial__nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nt-testimonial .nt-testimonial__nav .nav-btn {
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  background: var(--neo-primary, #0066ff);
+  color: var(--neo-white, #ffffff);
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 102, 255, 0.22);
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  border-top-right-radius: var(--neo-radius-button, 20px);
+  border-bottom-left-radius: var(--neo-radius-button, 20px);
+}
+
+.nt-testimonial .nt-testimonial__nav .nav-btn.prev {
+  border-color: var(--neo-border, #e5ebf5);
+  background: var(--neo-white, #ffffff);
+  color: var(--neo-navy, #0b2347);
+  box-shadow: none;
+}
+
+.nt-testimonial .nt-testimonial__nav .nav-btn:hover {
+  background: var(--neo-navy, #0b2347);
+  color: var(--neo-white, #ffffff);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(11, 35, 71, 0.18);
+}
+
+.nt-testimonial .nt-testimonial__nav .nav-btn:focus-visible,
+.nt-testimonial .nt-testimonial-simple-dots button:focus-visible {
+  outline: 3px solid rgba(0, 102, 255, 0.35);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   TESTIMONIAL CARD
+========================================= */
+
+.nt-testimonial__right {
+  position: relative;
+  min-width: 0;
+}
+
+.nt-testimonial .nt-testimonial-card {
+  position: relative;
+  display: flex;
+  min-height: 380px;
+  flex-direction: column;
+  padding: 42px 36px 32px;
+  background: var(--neo-white, #ffffff);
+  border: 1px solid var(--neo-border, #e5ebf5);
+  box-shadow: 0 22px 60px rgba(11, 35, 71, 0.08);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+  border-top-left-radius: var(--neo-radius-card, 23px);
+  border-bottom-right-radius: var(--neo-radius-card, 23px);
+}
+
+.nt-testimonial .nt-testimonial-card.is-animating {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+
+/* Top row: quote icon and client rating */
+.nt-testimonial .nt-testimonial-card .top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+/* Quote mark — explicit icon size and visibility */
+.nt-testimonial .nt-testimonial-card .quote-icon {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  background: var(--neo-primary, #0066ff);
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(0, 102, 255, 0.22);
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.nt-testimonial .nt-testimonial-card .quote-icon i {
+  display: inline-block;
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  line-height: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================
+   CARD RATING — YELLOW STARS
+========================================= */
+
+.nt-testimonial .nt-testimonial-card .rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 6px;
+}
+
+.nt-testimonial .nt-testimonial-card .rating .rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nt-testimonial .nt-testimonial-card .rating .rating-stars i {
+  display: inline-block;
+  color: #ffb400 !important;
+  font-size: 1.15rem;
+  line-height: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nt-testimonial .nt-testimonial-card .rating > span:last-child {
+  margin-left: 6px;
+  color: var(--neo-navy, #0b2347);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Testimonial feedback */
+.nt-testimonial .nt-testimonial-card .feedback {
+  flex: 1;
+  margin: 0;
+  color: var(--neo-navy, #0b2347);
+  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+  font-weight: 500;
+  line-height: 1.85;
+  letter-spacing: -0.15px;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   CLIENT INFORMATION
+========================================= */
+
+.nt-testimonial .client-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 26px;
+  border-top: 1px solid var(--neo-border, #e5ebf5);
+}
+
+.nt-testimonial .client-photo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  object-fit: cover;
+  border: 1px solid var(--neo-border, #e5ebf5);
+  border-top-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.nt-testimonial .client-meta {
+  min-width: 0;
+}
+
+.nt-testimonial .client-meta strong {
+  display: block;
+  color: var(--neo-navy, #0b2347);
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.nt-testimonial .client-meta span {
+  display: block;
+  margin-top: 3px;
+  color: var(--neo-muted, #6b7280);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.nt-testimonial .client-badge {
+  margin-left: auto;
+  padding: 8px 14px;
+  background: var(--neo-surface-deep, #eef4ff);
+  color: var(--neo-primary, #0066ff);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* =========================================
+   TESTIMONIAL DOTS
+========================================= */
+
+.nt-testimonial .nt-testimonial-simple-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.nt-testimonial .nt-testimonial-simple-dots button {
+  width: 36px;
+  height: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: var(--neo-border, #e5ebf5);
+  cursor: pointer;
+  transition:
+    width 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.nt-testimonial .nt-testimonial-simple-dots button.is-active {
+  width: 48px;
+  background: var(--neo-primary, #0066ff);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 991.98px) {
+  .nt-testimonial {
+    padding: 80px 0;
+  }
+
+  .nt-testimonial__shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .nt-testimonial__left h2 br {
+    display: none;
+  }
+
+  .nt-testimonial .nt-testimonial-card {
+    min-height: 360px;
+    padding: 32px 26px 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .nt-testimonial {
+    padding: 56px 0;
+  }
+
+  .nt-testimonial .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .nt-testimonial .rating-summary {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .nt-testimonial .rating-summary .stars {
+    gap: 4px;
+  }
+
+  .nt-testimonial .rating-summary .stars i {
+    font-size: 1rem;
+  }
+
+  .nt-testimonial .nt-testimonial-card {
+    min-height: 340px;
+    padding: 28px 20px 20px;
+    border-top-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+
+  .nt-testimonial .nt-testimonial-card .top-row {
+    gap: 12px;
+  }
+
+  .nt-testimonial .nt-testimonial-card .quote-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    font-size: 1.5rem;
+  }
+
+  .nt-testimonial .nt-testimonial-card .quote-icon i {
+    font-size: 1.5rem;
+  }
+
+  .nt-testimonial .nt-testimonial-card .rating {
+    gap: 4px;
+  }
+
+  .nt-testimonial .nt-testimonial-card .rating .rating-stars i {
+    font-size: 0.95rem;
+  }
+
+  .nt-testimonial .nt-testimonial-card .rating > span:last-child {
+    font-size: 0.8rem;
+  }
+
+  .nt-testimonial .nt-testimonial__nav .nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nt-testimonial .client-info {
+    gap: 12px;
+  }
+
+  .nt-testimonial .client-photo {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .nt-testimonial .client-badge {
+    padding: 7px 9px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .nt-testimonial *,
+  .nt-testimonial *::before,
+  .nt-testimonial *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

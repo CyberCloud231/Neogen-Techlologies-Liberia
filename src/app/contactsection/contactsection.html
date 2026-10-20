@@ -1,0 +1,217 @@
+
+<section class="nt-cta-contact" id="contact" aria-labelledby="contact-heading">
+  <!-- Background image and overlay -->
+  <div class="nt-cta-bg" aria-hidden="true">
+    <img
+      src="/IMAGES/Neogencontactimagebg.jpg"
+      alt=""
+      loading="lazy"
+    />
+    <div class="overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="nt-cta-shell">
+
+      <!-- Left: Video call to action -->
+      <div class="nt-cta-video">
+        <button
+          type="button"
+          class="play-btn ripple"
+          (click)="openVideo()"
+          aria-label="Watch how Neogen Technologies works"
+          [attr.aria-expanded]="isVideoOpen"
+        >
+          <svg
+            width="22"
+            height="24"
+            viewBox="0 0 21 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M19.9 10.68C21.23 11.45 21.23 13.38 19.9 14.15L3.23 23.72C1.9 24.48 0.24 23.52 0.24 21.98V2.85C0.24 1.31 1.9 0.35 3.23 1.11L19.9 10.68Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+
+        <div class="video-text">
+          <span>Watch How We Work</span>
+          <strong>Powering Liberia's Digital Future</strong>
+        </div>
+      </div>
+
+      <!-- Right: Appointment form -->
+      <div class="nt-cta-form-card">
+        <div class="form-header">
+          <h2 id="contact-heading">Make an Appointment</h2>
+          <p>
+            Feel free to contact us. We respect your privacy and won't spam
+            your email.
+          </p>
+        </div>
+
+        <form
+          #contactForm="ngForm"
+          (ngSubmit)="onSubmit(contactForm)"
+          novalidate
+        >
+          <div class="input-box">
+            <input
+              type="text"
+              id="contact-full-name"
+              name="fullName"
+              [(ngModel)]="form.fullName"
+              placeholder="Full Name *"
+              aria-label="Full name"
+              autocomplete="name"
+              required
+              minlength="2"
+              #fullName="ngModel"
+              [attr.aria-invalid]="
+                fullName.invalid && (fullName.touched || contactForm.submitted)
+              "
+            />
+
+            <small
+              class="field-error"
+              *ngIf="
+                fullName.invalid &&
+                (fullName.touched || contactForm.submitted)
+              "
+            >
+              Please enter your name (at least 2 characters).
+            </small>
+          </div>
+
+          <div class="input-box">
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              [(ngModel)]="form.email"
+              placeholder="Email Here *"
+              aria-label="Email address"
+              autocomplete="email"
+              required
+              email
+              #email="ngModel"
+              [attr.aria-invalid]="
+                email.invalid && (email.touched || contactForm.submitted)
+              "
+            />
+
+            <small
+              class="field-error"
+              *ngIf="email.invalid && (email.touched || contactForm.submitted)"
+            >
+              Please enter a valid email address.
+            </small>
+          </div>
+
+          <div class="input-box">
+            <select
+              id="contact-service"
+              name="service"
+              [(ngModel)]="form.service"
+              aria-label="Select a service"
+              required
+              #service="ngModel"
+              [attr.aria-invalid]="
+                service.invalid && (service.touched || contactForm.submitted)
+              "
+            >
+              <option value="" disabled>Select An Option *</option>
+              <option value="web">Web Development</option>
+              <option value="app">Mobile App</option>
+              <option value="saas">SaaS Platform</option>
+              <option value="consulting">IT Consulting</option>
+            </select>
+
+            <small
+              class="field-error"
+              *ngIf="
+                service.invalid && (service.touched || contactForm.submitted)
+              "
+            >
+              Please select a service.
+            </small>
+          </div>
+
+          <div class="input-box">
+            <textarea
+              id="contact-message"
+              name="message"
+              [(ngModel)]="form.message"
+              placeholder="Your Message *"
+              aria-label="Your message"
+              rows="5"
+              required
+              minlength="10"
+              #message="ngModel"
+              [attr.aria-invalid]="
+                message.invalid && (message.touched || contactForm.submitted)
+              "
+            ></textarea>
+
+            <small
+              class="field-error"
+              *ngIf="
+                message.invalid && (message.touched || contactForm.submitted)
+              "
+            >
+              Please enter a message of at least 10 characters.
+            </small>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="submit-btn">
+              <span>Submit Message</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Video modal -->
+  <div
+    class="video-modal"
+    *ngIf="isVideoOpen"
+    (click)="closeVideo()"
+    role="presentation"
+  >
+    <div
+      class="video-box"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Neogen Technologies introduction video"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        type="button"
+        class="close-modal"
+        (click)="closeVideo()"
+        aria-label="Close video"
+      >
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+
+      <video
+        class="contact-video-player"
+        controls
+        autoplay
+        playsinline
+        preload="metadata"
+      >
+        <source
+          src="https://pixabay.com/videos/download/x-174086_medium.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support HTML video.
+      </video>
+    </div>
+  </div>
+</section>

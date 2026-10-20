@@ -1,0 +1,344 @@
+
+/* =========================================
+   NEOGEN TECHNOLOGIES
+   IMPACT COUNTERS — ENTERPRISE BRAND SYSTEM
+========================================= */
+
+.nt-counter-area {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 84px 0;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f8fbff 45%,
+    #eef4ff 100%
+  );
+}
+
+/* Decorative blue background glow */
+.nt-counter-area::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -120px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 102, 255, 0.08) 0%,
+    rgba(0, 102, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* Keep section content above the decoration */
+.nt-counter-area > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.nt-counter__header {
+  max-width: 720px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.nt-counter__header .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--neo-primary, #0066ff);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.nt-counter__header h3 {
+  margin: 0;
+  color: var(--neo-navy, #0b2347);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================
+   RESPONSIVE COUNTER GRID
+========================================= */
+
+.nt-counter__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* =========================================
+   COUNTER CARD
+========================================= */
+
+.nt-counter-area .nt-counter-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 210px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px 24px;
+
+  background: var(--neo-white, #ffffff);
+  border: 1px solid var(--neo-border, #e5ebf5);
+  box-shadow: var(--neo-shadow-sm, 0 8px 24px rgba(11, 35, 71, 0.06));
+
+  text-align: center;
+  overflow-wrap: anywhere;
+
+  border-top-left-radius: var(--neo-radius-card, 23px);
+  border-bottom-right-radius: var(--neo-radius-card, 23px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  animation: ntCounterFadeUp 0.65s ease both;
+  animation-delay: var(--delay, 0s);
+}
+
+.nt-counter-area .nt-counter-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: var(--neo-shadow-hover, 0 16px 36px rgba(11, 35, 71, 0.12));
+}
+
+/* =========================================
+   ICON BOX
+   Consistent Neogen blue across every card
+========================================= */
+
+.nt-counter-area .nt-counter-card .icon-box {
+  display: inline-flex;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+  /* background: var(--neo-primary, #0066ff); */
+  color: #ffffff;
+
+  font-size: 2rem;
+  line-height: 1;
+
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+
+  box-shadow: 0 10px 24px rgba(0, 102, 255, 0.22);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Keep the actual icon glyph visible and white */
+.nt-counter-area .nt-counter-card .icon-box i {
+  display: inline-block;
+  color: #0066ff !important;
+  font-size: inherit;
+  line-height: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nt-counter-area .nt-counter-card:hover .icon-box {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 102, 255, 0.3);
+}
+
+/* =========================================
+   COUNTER NUMBER AND SUFFIX
+========================================= */
+
+.nt-counter-area .nt-counter-card h5 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+
+  margin: 0 0 8px;
+  color: var(--neo-navy, #0b2347);
+
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.nt-counter-area .nt-counter-card h5 .count {
+  color: var(--neo-navy, #0b2347);
+  font-variant-numeric: tabular-nums;
+}
+
+.nt-counter-area .nt-counter-card h5 .suffix {
+  color: var(--neo-primary, #0066ff);
+  font-size: inherit;
+  font-weight: 800;
+}
+
+/* =========================================
+   CARD LABEL AND DESCRIPTION
+========================================= */
+
+.nt-counter-area .nt-counter-card h6 {
+  margin: 0 0 5px;
+  color: var(--neo-navy, #0b2347);
+
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.45;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nt-counter-area .nt-counter-card p {
+  max-width: 260px;
+  margin: 0;
+  color: var(--neo-muted, #6b7280);
+
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ENTRANCE ANIMATION
+========================================= */
+
+@keyframes ntCounterFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+  .nt-counter-area {
+    padding: 64px 0;
+  }
+
+  .nt-counter__header {
+    margin-bottom: 32px;
+  }
+
+  .nt-counter__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .nt-counter-area .nt-counter-card {
+    min-height: 190px;
+  }
+
+  .nt-counter-area .nt-counter-card .icon-box {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+    margin-bottom: 14px;
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575.98px) {
+  .nt-counter-area {
+    padding: 48px 0;
+  }
+
+  .nt-counter__grid {
+    gap: 12px;
+  }
+
+  .nt-counter-area .nt-counter-card {
+    min-height: 170px;
+    padding: 22px 14px 18px;
+    border-top-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+
+  .nt-counter-area .nt-counter-card .icon-box {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .nt-counter-area .nt-counter-card h5 {
+    font-size: 1.9rem;
+  }
+
+  .nt-counter-area .nt-counter-card h6 {
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+  }
+
+  .nt-counter-area .nt-counter-card p {
+    font-size: 0.78rem;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 359.98px) {
+  .nt-counter__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nt-counter-area .nt-counter-card {
+    min-height: 158px;
+  }
+
+  .nt-counter-area .nt-counter-card .icon-box {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .nt-counter-area .nt-counter-card,
+  .nt-counter-area .nt-counter-card .icon-box {
+    animation: none;
+    transition: none;
+  }
+
+  .nt-counter-area .nt-counter-card {
+    opacity: 1;
+    transform: none;
+  }
+}

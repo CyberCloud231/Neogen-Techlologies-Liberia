@@ -1,0 +1,523 @@
+
+/* =========================================================
+   NEOGEN TECHNOLOGIES — CONTACT & APPOINTMENT SECTION
+   Preserves the existing brand, layout, and corner styling
+   ========================================================= */
+
+.nt-cta-contact {
+  position: relative;
+  isolation: isolate;
+  min-height: 720px;
+  padding: 0;
+  overflow: hidden;
+  background: var(--neo-navy, #0b2347);
+}
+
+/* Background image and overlay */
+
+.nt-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.nt-cta-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nt-cta-bg .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 35, 71, 0.35) 0%,
+    rgba(11, 35, 71, 0.15) 45%,
+    rgba(11, 35, 71, 0.25) 100%
+  );
+}
+
+/* Main container */
+
+.nt-cta-contact .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.nt-cta-shell {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 0;
+  min-height: 720px;
+}
+
+/* =========================================================
+   LEFT COLUMN — VIDEO CALL TO ACTION
+   ========================================================= */
+
+.nt-cta-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.play-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  color: #fff;
+  background: var(--neo-primary, #0066ff);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 12px 32px rgba(0, 102, 255, 0.38);
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.play-btn svg {
+  display: block;
+  margin-left: 4px;
+}
+
+.play-btn:hover {
+  background: var(--neo-navy, #0b2347);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  transform: scale(1.08);
+}
+
+.play-btn:focus-visible,
+.submit-btn:focus-visible,
+.close-modal:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.play-btn.ripple::after {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--neo-primary, #0066ff);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  animation: nt-cta-ripple 1.8s ease-out infinite;
+}
+
+@keyframes nt-cta-ripple {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+.video-text {
+  margin-top: 22px;
+  color: #fff;
+}
+
+.video-text span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.video-text strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RIGHT COLUMN — APPOINTMENT FORM CARD
+   ========================================================= */
+
+.nt-cta-form-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--neo-white, #fff);
+  border-top-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+}
+
+.form-header {
+  padding: 36px 36px 18px;
+}
+
+.form-header h2 {
+  margin: 0 0 8px;
+  color: var(--neo-navy, #0b2347);
+  font-size: clamp(1.7rem, 2.2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+}
+
+.form-header p {
+  margin: 0;
+  color: var(--neo-muted, #6b7a90);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Form layout */
+
+.nt-cta-form-card form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 36px;
+}
+
+.input-box {
+  margin-bottom: 16px;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  color: var(--neo-navy, #0b2347);
+  background: #f6f8fb;
+  border: 1px solid transparent;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  outline: none;
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.input-box input,
+.input-box select {
+  min-height: 50px;
+}
+
+.input-box select {
+  cursor: pointer;
+}
+
+.input-box textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: #6b7a90;
+  opacity: 1;
+}
+
+.input-box select:invalid {
+  color: #6b7a90;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+  background: #fff;
+  border-color: var(--neo-primary, #0066ff);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+/* Accessible validation feedback */
+
+.input-box input[aria-invalid="true"],
+.input-box select[aria-invalid="true"],
+.input-box textarea[aria-invalid="true"] {
+  border-color: #dc3545;
+}
+
+.input-box input[aria-invalid="true"]:focus,
+.input-box select[aria-invalid="true"]:focus,
+.input-box textarea[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  color: #b42332;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* Blue form footer */
+
+.form-footer {
+  margin-top: auto;
+  margin-right: -36px;
+  margin-left: -36px;
+  padding: 22px 36px;
+  background: var(--neo-primary, #0066ff);
+  border-bottom-right-radius: 28px;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 28px;
+  color: var(--neo-primary, #0066ff);
+  background: var(--neo-white, #fff);
+  border: 0;
+  border-top-left-radius: var(--neo-radius-button, 20px);
+  border-bottom-right-radius: var(--neo-radius-button, 20px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.submit-btn:hover {
+  color: #fff;
+  background: var(--neo-navy, #0b2347);
+  box-shadow: 0 10px 22px rgba(11, 35, 71, 0.2);
+  transform: translateY(-2px);
+}
+
+.submit-btn:focus-visible {
+  outline-color: var(--neo-navy, #0b2347);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   VIDEO MODAL
+   ========================================================= */
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(11, 35, 71, 0.88);
+  backdrop-filter: blur(5px);
+}
+
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  overflow: visible;
+  background: #000;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+.contact-video-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--neo-navy, #0b2347);
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.close-modal:hover {
+  color: #fff;
+  background: var(--neo-primary, #0066ff);
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   TABLET AND MOBILE
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+  .nt-cta-contact {
+    min-height: auto;
+  }
+
+  .nt-cta-shell {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    gap: 0;
+  }
+
+  .nt-cta-video {
+    min-height: 360px;
+    padding: 60px 20px;
+  }
+
+  .nt-cta-form-card {
+    min-height: auto;
+    border-top-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  .form-footer {
+    border-bottom-right-radius: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .nt-cta-contact .container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .nt-cta-video {
+    min-height: 300px;
+    padding: 48px 16px;
+  }
+
+  .video-text {
+    max-width: 320px;
+  }
+
+  .video-text strong {
+    font-size: 1.1rem;
+  }
+
+  .nt-cta-form-card {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .form-header {
+    padding: 28px 22px 14px;
+  }
+
+  .form-header h2 {
+    font-size: 1.65rem;
+  }
+
+  .nt-cta-form-card form {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .input-box {
+    margin-bottom: 14px;
+  }
+
+  .input-box input,
+  .input-box select,
+  .input-box textarea {
+    padding: 13px 14px;
+    font-size: 0.9rem;
+  }
+
+  .form-footer {
+    margin-right: -22px;
+    margin-left: -22px;
+    padding: 18px 22px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .video-modal {
+    padding: 16px;
+  }
+
+  .video-box {
+    border-radius: 12px;
+  }
+
+  .contact-video-player {
+    border-radius: 12px;
+  }
+
+  .close-modal {
+    top: -48px;
+    right: 0;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .play-btn,
+  .submit-btn,
+  .close-modal,
+  .input-box input,
+  .input-box select,
+  .input-box textarea {
+    transition: none;
+  }
+
+  .play-btn.ripple::after {
+    animation: none;
+  }
+}

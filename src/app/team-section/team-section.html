@@ -1,0 +1,39 @@
+<section class="nt-team-slider" id="teamSection" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
+  <div class="container">
+    <div class="nt-team-slider__shell">
+      <div class="nt-team-main">
+        <div class="nt-team-main__visual" [class.is-animating]="isAnimating">
+          <img class="nt-team-main__photo" [src]="activeMember.image" [alt]="activeMember.name" loading="eager" (error)="onImageError($event)"/>
+          <div class="nt-team-main__overlay"></div>
+          <span class="nt-team-main__id">{{ activeMember.id }}</span>
+          <span class="nt-team-main__specialty">{{ activeMember.specialty }}</span>
+          <div class="nt-team-main__socials">
+            <a *ngIf="activeMember.facebook" [href]="activeMember.facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a *ngIf="activeMember.linkedin" [href]="activeMember.linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a *ngIf="activeMember.instagram" [href]="activeMember.instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a *ngIf="activeMember.email" [href]="'mailto:'+activeMember.email"><i class="bi bi-envelope-fill"></i></a>
+          </div>
+          <div class="nt-team-main__info">
+            <div class="info-text"><h3>{{ activeMember.name }}</h3><p>{{ activeMember.role }}</p></div>
+            <button class="nt-team-main__toggle" type="button" (click)="next()"><i class="bi bi-dash-lg"></i></button>
+          </div>
+        </div>
+        <div class="nt-team-progress"><div class="nt-team-progress__bar" #progressBar></div></div>
+      </div>
+
+      <div class="nt-team-panel">
+        <div class="nt-team-panel__top">
+          <div><span class="nt-team-panel__eyebrow">Meet Our Leadership</span><h2 class="nt-team-panel__title">Experts Powering<br>Liberia's Digital Future.</h2></div>
+          <div class="nt-team-panel__nav"><button type="button" class="nav-btn" (click)="prev()"><i class="bi bi-arrow-left"></i></button><button type="button" class="nav-btn" (click)="next()"><i class="bi bi-arrow-right"></i></button></div>
+        </div>
+        <p class="nt-team-panel__desc">{{ activeMember.biography }}</p>
+        <div class="nt-team-panel__meta"><div class="meta-item"><strong>{{ activeMember.name }}</strong><span>{{ activeMember.role }} • {{ activeMember.specialty }}</span></div><div class="meta-badge">NEOGEN TECHNOLOGIES • LR204069</div></div>
+        <div class="nt-team-thumbs">
+          <button type="button" class="nt-team-thumb" *ngFor="let member of teamMembers; let i = index; trackBy: trackById" [class.is-active]="i === activeIndex" (click)="goTo(i)">
+            <img [src]="member.image" [alt]="member.name" loading="lazy" (error)="onImageError($event)"/><span class="thumb-overlay"></span><span class="thumb-id">{{ member.id }}</span><span class="thumb-name">{{ member.name | slice:0:18 }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
