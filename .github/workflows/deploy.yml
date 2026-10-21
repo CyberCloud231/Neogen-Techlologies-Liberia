@@ -25,14 +25,14 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npm run build -- --output-path docs --base-href /Neogen-Technologies-Liberia/
+        run: npm run build -- --output-path docs/browser --base-href /Neogen-Technologies-Liberia/
 
       - name: Add .nojekyll
-        run: echo "" > docs/.nojekyll
+        run: echo "" > docs/browser/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./docs/browser
           publish_branch: gh-pages
