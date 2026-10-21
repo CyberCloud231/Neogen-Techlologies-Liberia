@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: write   # allow pushing to gh-pages branch
 
 jobs:
   build-and-deploy:
@@ -26,6 +26,9 @@ jobs:
 
       - name: Build Angular
         run: npm run build -- --output-path docs --base-href /Neogen-Technologies-Liberia/
+
+      - name: Add .nojekyll
+        run: echo "" > docs/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
