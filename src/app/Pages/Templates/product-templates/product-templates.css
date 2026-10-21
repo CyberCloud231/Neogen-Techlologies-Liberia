@@ -1,7 +1,121 @@
-.neo-product__hero{padding:80px 0;background:#f8f9ff}
-.neo-product__eyebrow{color:#5a5af3;font-weight:700;letter-spacing:1px}
-.neo-product__tabs ul{list-style:none;display:flex;gap:20px;padding:0;border-bottom:1px solid #ddd}
-.neo-product__tabs li{cursor:pointer;padding:12px 0;border-bottom:3px solid transparent}
-.neo-product__tabs li.active{border-color:#5a5af3;color:#5a5af3;font-weight:600}
-.neo-feature-card{border:1px solid #eee;padding:20px;border-radius:12px}
-.neo-feature-card i{font-size:28px;color:#5a5af3}
+/* =========================================================
+   NEOGEN TECHNOLOGIES - PRODUCT TEMPLATE ONE PAGE
+   Uses global tokens --neo-primary #0066ff, --neo-navy #0b2347
+   ========================================================= */
+
+.product-onepage{
+  display:block;
+  min-height:100vh;
+  background:#fff;
+  overflow-x:hidden;
+}
+
+.product-sections{
+  padding:0;
+  margin:0;
+}
+
+/* ONE PAGE SECTIONS - LIKE HOME */
+.product-section{
+  padding:80px 0;
+  border-bottom:1px solid #f1f5f9;
+  position:relative;
+  background:#fff;
+}
+.product-section.bg-light{
+  background:#f8fbff;
+}
+
+.section-header{
+  max-width:720px;
+  margin:0 auto 48px;
+  text-align:center;
+}
+.section-header .subtitle{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:12px;
+  color:#0066ff;
+  font-weight:700;
+}
+.section-header h2{
+  font-size:32px;
+  font-weight:800;
+  color:#0b2347;
+  line-height:1.2;
+  letter-spacing:-0.5px;
+  margin:0 0 12px;
+}
+.section-header .text-muted{
+  color:#6b7280;
+  font-size:15px;
+}
+
+/* SUBNAV - NOW INSIDE HERO, STICKY WHEN SCROLL */
+.neo-subnav-wrap{
+  position:relative;
+  z-index:1029;
+  background:#fff;
+  border-bottom:1px solid #e8edf5;
+  transition:all .3s ease;
+}
+.neo-subnav-wrap.sticky{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background:rgba(255,255,255,.98);
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 35px rgba(11,35,71,.08);
+  animation:slideDown .35s ease;
+}
+@keyframes slideDown{
+  from{transform:translateY(-100%)}
+  to{transform:translateY(0)}
+}
+
+/* HERO SUBNAV INSIDE HOVER IMAGE - OVERRIDE */
+:host ::ng-deep .neo-hero-subnav.sticky{
+  position:fixed !important;
+  top:0 !important;
+  bottom:auto !important;
+}
+
+/* REVEAL LIKE HOME - FIXED, NOT HIDING FOREVER */
+.reveal{
+  opacity:1;
+  transform:translateY(0);
+  transition:all .6s ease;
+}
+@media (prefers-reduced-motion: no-preference){
+  .reveal{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  .reveal.active{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* LOADING STATE */
+.product-onepage + .container .spinner-border{
+  width:3rem;
+  height:3rem;
+  color:#0066ff;
+}
+
+/* RESPONSIVE - LIKE HOME */
+@media (max-width: 991.98px){
+  .product-section{padding:64px 0}
+  .section-header{margin-bottom:36px}
+  .section-header h2{font-size:26px}
+}
+
+@media (max-width: 767.98px){
+  .product-section{padding:52px 0}
+  .section-header h2{font-size:22px}
+  .neo-subnav-wrap.sticky{top:0}
+}

@@ -1,0 +1,54 @@
+<section id="pricing" class="neo-pricing-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="neo-section-title-box mb-60">
+          <span class="neo-subtitle">Pricing Plan</span>
+          <h2 class="neo-title">Our Affordable Pricing Plans For {{ productName }}</h2>
+          <p class="neo-desc">Transparent pricing • MSI, EXE, APK included • LBR NO: LR204069</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let plan of pricing">
+        <div class="single-price-box" [class.active]="plan.popular">
+          <span *ngIf="plan.popular" class="tag">popular</span>
+          <h4 class="price-package">{{ plan.name }}</h4>
+          <h3 class="price">{{ plan.price }} <span>{{ plan.period || '/Month' }}</span></h3>
+          <ul>
+            <li *ngFor="let f of plan.features">
+              <i class="bi bi-check-circle-fill"></i> {{ f }}
+            </li>
+          </ul>
+          <div class="price-box-btn">
+            <button class="neo-btn-primary">
+              <span>{{ plan.cta }}</span> <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!pricing || pricing.length === 0" class="text-center py-4">
+      <p class="text-muted">Pricing for {{ productName }} - Contact sales for custom plan</p>
+      <div class="row g-4 justify-content-center mt-3">
+        <div class="col-xl-4 col-lg-6">
+          <div class="single-price-box active">
+            <span class="tag">popular</span>
+            <h4 class="price-package">Custom Plan</h4>
+            <h3 class="price">Contact <span>Sales</span></h3>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Unlimited Users</li>
+              <li><i class="bi bi-check-circle-fill"></i> All Features</li>
+              <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
+            </ul>
+            <div class="price-box-btn">
+              <a routerLink="/contact" class="neo-btn-primary">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

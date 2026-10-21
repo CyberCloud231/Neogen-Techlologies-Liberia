@@ -935,18 +935,7 @@
   padding: 22px 22px 18px !important;
 }
 
-/* More breathing space between columns */
-/* .mega-dropdown.mega-wide .row {
-  --bs-gutter-x: 28px;
-  --bs-gutter-y: 22px;
-} */
 
-/* Title spacing */
-/* .mega-dropdown.mega-wide .mega-title {
-  margin: 0 0 16px !important;
-  padding-bottom: 12px !important;
-  letter-spacing: 0.4px;
-} */
 
 /* Item spacing - perfect click area */
 .mega-dropdown.mega-wide .dropdown-item {
@@ -961,18 +950,7 @@
   margin-bottom: 0 !important;
 }
 
-/* SaaS Products column - highlight with light bg */
-/* .mega-dropdown.mega-wide .col-md-3:nth-child(2) {
-  background: #f8faff;
-  border-radius: 10px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-} */
 
-/* .mega-dropdown.mega-wide .col-md-3:nth-child(2) .mega-title {
-  color: var(--brand-blue);
-  border-bottom-color: #dbe8ff;
-} */
 
 
 .mega-dropdown.mega-wide .col-md-3:last-child p {

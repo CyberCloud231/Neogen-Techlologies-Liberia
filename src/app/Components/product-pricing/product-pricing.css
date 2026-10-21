@@ -1,0 +1,16 @@
+.neo-pricing-area{padding:80px 0 100px;background:#f8fbff;display:block !important;opacity:1 !important}
+.neo-section-title-box{max-width:720px;margin:0 auto 60px;text-align:center}
+.neo-subtitle{display:block;color:#0066ff;font-weight:700;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:14px}
+.neo-title{color:#0b2347;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:800;line-height:1.2;margin:0 0 12px}
+.neo-desc{color:#6b7280}
+.single-price-box{position:relative;background:#fff;border:1px solid #e5ebf5;border-radius:23px;padding:32px 28px;height:100%;box-shadow:0 8px 24px rgba(11,35,71,.06);transition:all .35s ease;opacity:1 !important;transform:none !important}
+.single-price-box:hover{transform:translateY(-6px) !important;box-shadow:0 22px 45px rgba(3,69,167,.15);border-color:rgba(0,102,255,.4)}
+.single-price-box.active{border:2px solid #0066ff;transform:scale(1.02);box-shadow:0 15px 35px rgba(11,35,71,.10)}
+.tag{position:absolute;top:-12px;right:24px;background:#0066ff;color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:20px}
+.price-package{font-size:18px;font-weight:700;color:#0b2347;margin:0 0 12px}
+.price{font-size:42px;font-weight:800;color:#0b2347;margin:0 0 22px;line-height:1}.price span{font-size:14px;color:#6b7280;font-weight:500}
+.single-price-box ul{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px}
+.single-price-box ul li{display:flex;align-items:center;gap:10px;font-size:14px;color:#4a5568}.single-price-box ul li i{color:#0066ff}
+.neo-btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;background:#fff;color:#0066ff;border:2px solid #0066ff;border-radius:0 15px 0 15px;font-weight:700;font-size:14px;cursor:pointer;transition:all .35s ease;text-decoration:none}
+.neo-btn-primary:hover{background:#0066ff;color:#fff;transform:translateY(-2px)}
+.single-price-box.active .neo-btn-primary{background:#0066ff;color:#fff}

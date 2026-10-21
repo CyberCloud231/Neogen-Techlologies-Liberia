@@ -1,0 +1,7 @@
+<div class="subnav" [class.sticky]="isSticky">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="sub-left"><i class="bi bi-clouds"></i> <strong>{{productName}}</strong></div>
+    <ul><li *ngFor="let t of tabs" [class.active]="activeTab===t" (click)="tabChange.emit(t)">{{t | titlecase}}</li></ul>
+    <button class="btn-royal-sm">Get Quote</button>
+  </div>
+</div>

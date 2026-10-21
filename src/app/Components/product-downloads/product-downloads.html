@@ -1,0 +1,2 @@
+<div class="row g-3"><div class="col-md-6" *ngFor="let d of downloads"><div class="dl-card"><div><strong>{{d.label}}</strong><div class="meta">{{d.file}} • {{d.size}} • {{d.version}}</div></div><a [href]="d.url" class="btn btn-dark btn-sm"><i class="bi bi-download"></i> {{d.type | uppercase}}</a></div></div></div>
+<div *ngIf="!downloads.length" class="alert alert-info mt-3">Cloud access only at app.neogentechnologies.com</div>

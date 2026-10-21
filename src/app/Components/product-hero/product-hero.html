@@ -1,0 +1,35 @@
+<div class="neo-hero-wrapper">
+  <!-- REAL IMAGE - ALWAYS DISPLAYS -->
+  <div class="neo-hero-media">
+    <img [src]="heroSrc" (error)="onImgError($event)" [alt]="product.name + ' hero'" class="hero-img"/>
+  </div>
+  <div class="neo-hero-overlay"></div>
+
+  <!-- BRANDING + CONTENT -->
+  <div class="container neo-hero-content">
+    <div class="brand-badge">
+      <i class="bi bi-shield-check"></i> NEOGEN TECHNOLOGIES LIBERIA • LBR NO: LR204069
+    </div>
+    <span class="eyebrow">{{product.category | titlecase}} • {{product.platforms.join(' • ')}}</span>
+    <h1>{{product.name}}</h1>
+    <p class="lead">{{product.tagline}}</p>
+    <p class="desc">{{product.description}}</p>
+    <div class="hero-actions">
+      <button class="btn-royal">Explore {{product.name}} <i class="bi bi-arrow-right"></i></button>
+      <span class="trust"><i class="bi bi-check-circle-fill"></i> 99.9% Uptime • Made in Liberia</span>
+    </div>
+  </div>
+
+  <!-- SUBNAV INSIDE HERO -->
+  <div class="neo-hero-subnav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="subnav-left">
+        <i class="bi bi-grid"></i> <strong>{{productName || product.name}}</strong>
+      </div>
+      <ul class="subnav-tabs">
+        <li *ngFor="let t of tabs" [class.active]="activeTab===t" (click)="tabChange.emit(t)">{{t | titlecase}}</li>
+      </ul>
+      <button class="btn-royal-sm">Get Quote</button>
+    </div>
+  </div>
+</div>
